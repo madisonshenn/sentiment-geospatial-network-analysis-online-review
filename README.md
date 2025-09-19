@@ -42,6 +42,17 @@ The following 6 datasets are integrated to perform further analysis:
 6. yelp_user.csv: This file contains Yelp users information, including their ID, name, registration time, review count, the number of times their reviews received useful/funny/cool, average stars of their ratings, and other information about their past reviews.
 
 ## Data Preprocessing and EDA
+### Data Cleaning
+### 1. Users' Perspectives
+   1.1 Since account creation, how many reviews do regular users and elite users post on average each month? How often are reviews rated as useful, funny, or cool (count and proportion)?
+   Firstly, 
+
+   1.2 Do reviews with a high number of “useful” votes tend to be positive or negative? What is the length of those reviews with high number of "useful" vote? How about the reviews with high number of “funny” and “cool” votes?
+   1.3 What is the relationship between the number of reviews and the number of fans? What is the relationship between the number of fans and whe elite user status?
+   1.4 Which cities receive the most user reviews?
+### EDA
+Following data exploration is performed using mySQL.
+
 
 ## Geospatial Analysis
 
