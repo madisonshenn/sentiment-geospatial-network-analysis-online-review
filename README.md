@@ -56,7 +56,8 @@ Following data exploration is performed using mySQL.
 
 ## Geospatial Analysis
 
-<img width="481" height="504" alt="image" src="https://github.com/user-attachments/assets/330464c8-90df-4812-b8de-0ec1e09ec83b" />
+<img width="481" height="504" alt="image" src="https://github.com/user-attachments/assets/330464c8-90df-4812-b8de-0ec1e09ec83b" /><img width="639" height="504" alt="image" src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" />
+
 
 
 ## Sentiment Analysis
