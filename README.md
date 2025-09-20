@@ -1,12 +1,19 @@
 # sentiment-geospatial-network-analysis-online-review
 
-Table of Contents
-I tried to have a detailed and thorough write-up for this project, so this readme can be lengthy. Please jump to the specific section of your interest:
+Table of Contents:
+
+I included some visualizations and analysis with details I want to highlight for this project here, so this readme can be lengthy. Please jump to the specific sectionw of your interest:
+
 - [Stakeholder Value Propositions](#stakeholder-value-propositions)
 - [Data Description](#data-description)
 - [Data Preprocessing and EDA](#data-preprocessing-and-eda)
 - [Geospatial Analysis On Reviews](#geospatial-analysis-on-reviews)
+  a. global level visualization and analysis
+  b. city level visualization and analysis
+  c. tracking high value users (HVUs)
 - [Sentiment Analysis](#sentiment-analysis)
+  a. general sentiment analysis across platform
+  b. in depth sentiment analysis on the reviews of a popular spot
 - [Network Analysis](#network-analysis)
 
 ## TL;DR
@@ -128,7 +135,7 @@ The following regression plots show the trend of how the highest rating (stars) 
 
 ## Sentiment Analysis
 This section includes a general analysis across the platform and a more in depth sentiment analysis on reviews of a specific restaurant.
-Quick Links to jump to the second part: [Sentiment Analysis On Gen Korean BBQ House](#network-analysis-on-gen-korean-bbq-house)
+Quick Links to jump to the second part: - [Sentiment Analysis On Gen Korean BBQ House](#network-analysis-on-gen-korean-bbq-house)
 
 How I did the sentiment analysis: I created a TextBlob object blob to represent the text to be processed. Then, by calling methods of the TextBlob object such as words, tags, noun_phrases, and sentiment, it performs text processing and sentiment analysis. For example, if the input text is 'I love this restaurant! It’s amazing.'. The TextBlob object blob executes tokenization, part-of-speech tagging, noun phrase extraction, and sentiment analysis, and outputs the corresponding results.
 
