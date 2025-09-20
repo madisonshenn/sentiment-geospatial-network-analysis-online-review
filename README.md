@@ -5,14 +5,23 @@ Table of Contents:
 I included some visualizations and analysis with details I want to highlight for this project here, so this readme can be lengthy. Please jump to the specific sectionw of your interest:
 
 - [Stakeholder Value Propositions](#stakeholder-value-propositions)
+  a. users' perspectives
+  b. businesses' perspectives
+  c. platform's perspectives
 - [Data Description](#data-description)
-- [Data Preprocessing and EDA](#data-preprocessing-and-eda)
+- [Data Cleaning and Preprocessing with MySQL](#data-cleaning-and-preprocessing-with-mysql)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Geospatial Analysis On Reviews](#geospatial-analysis-on-reviews)
+
   a. global level visualization and analysis
+
   b. city level visualization and analysis
+
   c. tracking high value users (HVUs)
 - [Sentiment Analysis](#sentiment-analysis)
+
   a. general sentiment analysis across platform
+
   b. in depth sentiment analysis on the reviews of a popular spot
 - [Network Analysis](#network-analysis)
 
@@ -49,7 +58,7 @@ The following 6 datasets are integrated to perform further analysis:
 5. yelp_tip.csv: This file contains data related to tips, such as text about tips, the date that reviewed was posted, business ID, and user ID.
 6. yelp_user.csv: This file contains Yelp users information, including their ID, name, registration time, review count, the number of times their reviews received useful/funny/cool, average stars of their ratings, and other information about their past reviews.
 
-## Data Preprocessing and EDA
+## Data Cleaning and Preprocessing with MySQL
 ### Data Cleaning
 ### 1. Users' Perspectives
    1.1 Since account creation, how many reviews do regular users and elite users post on average each month? How often are reviews rated as useful, funny, or cool (count and proportion)?
@@ -58,7 +67,8 @@ The following 6 datasets are integrated to perform further analysis:
    1.2 Do reviews with a high number of “useful” votes tend to be positive or negative? What is the length of those reviews with high number of "useful" vote? How about the reviews with high number of “funny” and “cool” votes?
    1.3 What is the relationship between the number of reviews and the number of fans? What is the relationship between the number of fans and whe elite user status?
    1.4 Which cities receive the most user reviews?
-### EDA
+
+## Exploratory Data Analysis
 Following data exploration is performed using mySQL.
 
 
@@ -135,7 +145,7 @@ The following regression plots show the trend of how the highest rating (stars) 
 
 ## Sentiment Analysis
 This section includes a general analysis across the platform and a more in depth sentiment analysis on reviews of a specific restaurant.
-Quick Links to jump to the second part: - [Sentiment Analysis On Gen Korean BBQ House](#network-analysis-on-gen-korean-bbq-house)
+Quick Links to jump to the second part: - [Sentiment Analysis On Gen Korean BBQ House Reviews](#sentiment-analysis-on-gen-korean-bbq-house-reviews)
 
 How I did the sentiment analysis: I created a TextBlob object blob to represent the text to be processed. Then, by calling methods of the TextBlob object such as words, tags, noun_phrases, and sentiment, it performs text processing and sentiment analysis. For example, if the input text is 'I love this restaurant! It’s amazing.'. The TextBlob object blob executes tokenization, part-of-speech tagging, noun phrase extraction, and sentiment analysis, and outputs the corresponding results.
 
@@ -150,6 +160,54 @@ Next, I looked at the keyword distribution for reviews with polarity greater tha
 Cap max reviews to 30 for better visuals. ~80% of the users write only about 2 reviews.
 <img width="3010" height="1500" alt="image" src="https://github.com/user-attachments/assets/a9c4078a-fff4-4b18-8d6d-9a6350103c02" />
 
-#### Sentiment Analysis On Gen Korean BBQ House
+## Sentiment Analysis On Gen Korean BBQ House Reviews
+Firstly, I found the restaurant with most five stars reviews from users which is Gen Lorean BBQ House Reviews. 
+Why
+
+#### EDA and Top Common Words for this restaurants
+
+Distributions of review types:
+<img width="2531" height="1652" alt="image" src="https://github.com/user-attachments/assets/8ef8175d-87ad-43f5-97ba-0bab38bf415d" />
+
+Word cloud & top ten most common words in the reviews of this restaurant:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c2ea0fdb-9f21-404a-a12f-b3ac754a9d9d"  width="40%" />
+  <img src="https://github.com/user-attachments/assets/73a5527d-087e-41c3-afea-4a9905d6f756"  width="40%" />
+</p>
+
+#### Sentiment analysis: positive and not so postive words
+In this section, I primarily used the VADER (Valence Aware Dictionary and Sentiment Reasoner) sentiment analysis tool from Python’s NLTK library which is specifically designed for sentiment analysis of social media text.
+
+Implementation:
+1. Data Preparation: Filter out the reviews for this specific restaurant.
+2. Tokenization: Split reviews into individual words.
+3. Stopword Removal: Remove stopwords that carry no real meaning.
+4. Sentiment Analysis: Use VADER to assign sentiment scores to each word.
+5. Lexicon Classification: Classify words into positive and non-positive categories based on their sentiment scores.
+
+Generated visualizations:
+Left: word clouds for positive and non-positive words
+Right: the top 20 positive and negative sentimental words based on the scores
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/7d6f4837-f3da-4fef-914f-24eaac8f4fd9"
+ width="40%" />
+   <img src="https://github.com/user-attachments/assets/7ca76305-bcf0-4929-bc50a2cc34861b7e"  width="40%" />
+</p>
+
+#### Calculate sentiment for the reviews using AFINN
+Implementation:
+1. Load the AFINN Sentiment Lexicon: Load the AFINN dictionary; this lexicon contains words and their corresponding sentiment scores.
+2. Tokenization and Score Calculation: Tokenize each review, then use the dictionary to assign scores for each word, summing them to obtain the overall sentiment score of the review.
+3. Ranking and Display: Sort all reviews by sentiment score and display the top six reviews with their sentiment scores.
+
+Visualization showing bigrams that appeared more that 30 times
+  <img src="https://github.com/user-attachments/assets/7b5dd17b-763c-4091-9aea-01fcb4811b50" width="70%" />
+
+Visualizations showing bigrams that appear more than 30 times and contain 'pork', 'bbq', or 'service'.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1216aced-eb86-4faf-b02a-37e336354543" width="30%" />
+  <img src="https://github.com/user-attachments/assets/a5bfdb5e-9696-44be-a004-9a293711f248" width="30%" />
+  <img src="https://github.com/user-attachments/assets/f06762d5-cbfe-49b2-a44b-2eb0ebd1ea48" width="30%" />
+</p>
 
 ## Network Analysis
