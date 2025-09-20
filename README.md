@@ -5,7 +5,7 @@ Table of Contents
 - [Stakeholder Value Propositions](#stakeholder-value-propositions)
 - [Data Description](#data-description)
 - [Data Preprocessing and EDA](#data-preprocessing-and-eda)
-- [Geospatial Analysis](#geospatial-analysis)
+- [Geospatial Analysis On Reviews](#geospatial-analysis-on-reviews)
 - [Network Analysis](#network-analysis)
 
 ## TL;DR
@@ -54,17 +54,9 @@ The following 6 datasets are integrated to perform further analysis:
 Following data exploration is performed using mySQL.
 
 
-## Geospatial Analysis on the reviews
+## Geospatial Analysis On Reviews
 
-In the mapping section, we analyze the geographic locations of businesses.
-
-First, we look at a global view of Yelp businesses.
-
-Next, we zoom in on the two most concentrated regions (North America and Europe).
-
-We explore the cities with the highest number of reviews.
-
-Finally, we visualize the top two cities.
+In this section, I will show how I analyzed the geographic locations of businesses/restaurants. First, I looked at a global view of Yelp businesses. Next, I zoomed in on the two most concentrated regions (North America and Europe), and explored the cities with the highest number of reviews within those two regions respectively.
 
 #### Global Visualization and Analysis
 <table>
@@ -101,9 +93,16 @@ Below is an interactive animation created using the impressive Folium package to
 In this animation, businesses are highlighted according to their star ratings. The goal is to see whether certain hotspots or concentrated areas have particularly great restaurants. 
 
 It turns out that both well-rated and poorly-rated businesses are fairly evenly distributed across the city.
-
+Following are the screenshots showing the time-dynamic of reviews (rating stars) in Las Vegas:
 <p align="center">
-  <img width="798" height="479" alt="image" src="https://github.com/user-attachments/assets/eedacf6f-ff31-44c8-9956-05c461591c0e" />
+   <img width="811" height="503" alt="Screenshot 2025-09-19 222905" src="https://github.com/user-attachments/assets/023fe3df-ec26-470d-bba7-8e1979628484" />
+   <img width="807" height="502" alt="Screenshot 2025-09-19 222918" src="https://github.com/user-attachments/assets/1b107b2c-20cf-4ec5-bcce-79735be753f0" />
+   <img width="810" height="504" alt="Screenshot 2025-09-19 222926" src="https://github.com/user-attachments/assets/c0e2f187-f07d-4d0c-81f3-4c90fb53c06c" />
+</p>
+<p align="center">
+   <img width="815" height="500" alt="Screenshot 2025-09-19 222934" src="https://github.com/user-attachments/assets/d1663ea3-1868-4aa5-9e30-b99a1fb603b6" />
+   <img width="820" height="500" alt="Screenshot 2025-09-19 222941" src="https://github.com/user-attachments/assets/6a473e3a-f909-441c-a8ae-b3fd41f38307" />
+   <img width="819" height="512" alt="Screenshot 2025-09-19 222950" src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" />
 </p>
 
 ## Sentiment Analysis
