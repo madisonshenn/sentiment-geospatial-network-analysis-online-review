@@ -54,14 +54,57 @@ The following 6 datasets are integrated to perform further analysis:
 Following data exploration is performed using mySQL.
 
 
-## Geospatial Analysis
+## Geospatial Analysis on the reviews
 
+In the mapping section, we analyze the geographic locations of businesses.
+
+First, we look at a global view of Yelp businesses.
+
+Next, we zoom in on the two most concentrated regions (North America and Europe).
+
+We explore the cities with the highest number of reviews.
+
+Finally, we visualize the top two cities.
+
+#### Global Visualization and Analysis
+<table>
+  <tr>
+    <td width="70%">
+      Note: I used Matplotlib and Basemap libraries to generate the world map. Then, I generated a globe-style version of the map using orthographic projection, and filled the continents and oceans with the specified color codes. After that, I drew country boundaries and used a scatter plot to mark the latitude and longitude of business locations.
+    </td>
+    <td width="30%">
+      <img src="https://github.com/user-attachments/assets/330464c8-90df-4812-b8de-0ec1e09ec83b" width="100%" />
+    </td>
+  </tr>
+</table>
+
+Zoom In to North America and Europe
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/330464c8-90df-4812-b8de-0ec1e09ec83b" width="30%" />
   <img src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" width="30%" />
   <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="30%" />
 </p>
 
+#### City level visualiztaion and analysis
+
+I used Matplotlib to create the following four scatter plots. Firstly, I selected businesses located within small geographic bounding boxes around Las Vegas, Pheonix, Stuttgart, and Edinburgh, by filtering latitude and longitude ranges from the dataset rating_data. For each city, I ploted the businesses’ coordinates as scatter points on a black background. 
+
+Now, we can compare the spatial distribution of businesses in two cities in U.S. and two cities in Europe.
+
+An interesting observation is that U.S. cities often have orderly blocks or grid structures, whereas other cities may display a more fluid and irregular design. By visualizing business location data on maps, we can gain deeper insights into the distribution of economic activity and business clusters across different urban areas. This approach reveals spatial patterns and trends in a direct and engaging way, offering valuable perspectives for urban planning, policy-making, and business decision-making. Data visualization allows us to visually explore and understand the complex spatial relationships within urban areas, helping us better grasp how cities develop and change.
+
+<img width="1251" height="624" alt="image" src="https://github.com/user-attachments/assets/898ff8ad-cf25-4b7e-a141-b34badf7daa7" />
+<img width="1251" height="624" alt="image" src="https://github.com/user-attachments/assets/6018ef00-c426-42de-9496-748c246285fc" />
+
+How people rate different businesses in Las Vegas:
+Below is an interactive animation created using the impressive Folium package to generate striking Leaflet map visualizations. 
+
+In this animation, businesses are highlighted according to their star ratings. The goal is to see whether certain hotspots or concentrated areas have particularly great restaurants. 
+
+It turns out that both well-rated and poorly-rated businesses are fairly evenly distributed across the city.
+
+<p align="center">
+  <img width="798" height="479" alt="image" src="https://github.com/user-attachments/assets/eedacf6f-ff31-44c8-9956-05c461591c0e" />
+</p>
 
 ## Sentiment Analysis
 
