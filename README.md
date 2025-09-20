@@ -61,10 +61,10 @@ In this section, I will show how I analyzed the geographic locations of business
 #### Global Visualization and Analysis
 <table>
   <tr>
-    <td width="70%">
+    <td width="60%">
       Note: I used Matplotlib and Basemap libraries to generate the world map. Then, I generated a globe-style version of the map using orthographic projection, and filled the continents and oceans with the specified color codes. After that, I drew country boundaries and used a scatter plot to mark the latitude and longitude of business locations.
     </td>
-    <td width="30%">
+    <td width="40%">
       <img src="https://github.com/user-attachments/assets/330464c8-90df-4812-b8de-0ec1e09ec83b" width="100%" />
     </td>
   </tr>
@@ -73,7 +73,7 @@ In this section, I will show how I analyzed the geographic locations of business
 Zoom In to North America and Europe
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" width="45%" />
-  <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="25%" />
+  <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="30%" />
 </p>
 
 #### City level visualiztaion and analysis
