@@ -1,11 +1,12 @@
-# nlp-sentiment-analysis-online-review
+# sentiment-geospatial-network-analysis-online-review
 
 Table of Contents
-
+I tried to have a detailed and thorough write-up for this project, so this readme can be lengthy. Please jump to the specific section of your interest:
 - [Stakeholder Value Propositions](#stakeholder-value-propositions)
 - [Data Description](#data-description)
 - [Data Preprocessing and EDA](#data-preprocessing-and-eda)
 - [Geospatial Analysis On Reviews](#geospatial-analysis-on-reviews)
+- [Sentiment Analysis](#sentiment-analysis)
 - [Network Analysis](#network-analysis)
 
 ## TL;DR
@@ -106,6 +107,42 @@ Following are the screenshots showing the time-dynamic of reviews (rating stars)
    <img src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" width="30%" />
 </p>
 
+### Tracking High-Value Users (HVUs)
+It's useful to focus on the top-ranking users from the review dataset. Reviews from HVUs highlight popular restaurants and emerging trends in specific regions. Platform like Yelp can monetize these insights by guiding business advertisers to understand where and how to invest marketing spend. Besides, HVUs often write detailed, useful, and high-signal reviews (frequently marked as useful/funny/cool). Thus, by monitoring their activity, Yelp can maintain high-quality content, which directly drives consumer trust and platform stickiness. From tracking HVUs activities, platform can also identify high-value business categories and regions that generate the most engagement.
+
+By aggregation function, I found the top users with review['user_id'] == 'CxDOIDnH8gp9KXzpBHJYXw'. To track this high value user, I created a map showing all the locations he/she visited in chronological order, and then generated a heatmap animation from it.
+
+Below is screenshots showing a few timepoints of the locations of the restaurants this top users posted reviews about:
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/9641b602-3bd9-43cd-b66a-816f5bdb3619" width="30%" />
+   <img src="https://github.com/user-attachments/assets/180a2ca9-0644-4489-a66e-a7d078aeea8c" width="30%" />
+   <img src="https://github.com/user-attachments/assets/3f79ff4c-726e-435e-b5d6-de4eb345e1d0" width="30%" />
+</p>
+
+We also want to understand the relationship between the number of “useful” marks and the highest star ratings.
+
+The following regression plots show the trend of how the highest rating (stars) changes as the number of “useful” marks on reviews increases. The x-axis represents thresholds of “useful” marks, ranging from 100 to 1000 in increments of 20. The y-axis represents the highest rating corresponding to each threshold.
+<img width="1610" height="451" alt="image" src="https://github.com/user-attachments/assets/847992ed-51da-4cc2-9abf-2cdf6c476f23" />
+<img width="1597" height="451" alt="image" src="https://github.com/user-attachments/assets/98cb36b4-a8d0-4e6d-9ea9-8de2c167fea9" />
+
+
 ## Sentiment Analysis
+This section includes a general analysis across the platform and a more in depth sentiment analysis on reviews of a specific restaurant.
+Quick Links to jump to the second part: [Sentiment Analysis On Gen Korean BBQ House](#network-analysis-on-gen-korean-bbq-house)
+
+How I did the sentiment analysis: I created a TextBlob object blob to represent the text to be processed. Then, by calling methods of the TextBlob object such as words, tags, noun_phrases, and sentiment, it performs text processing and sentiment analysis. For example, if the input text is 'I love this restaurant! It’s amazing.'. The TextBlob object blob executes tokenization, part-of-speech tagging, noun phrase extraction, and sentiment analysis, and outputs the corresponding results.
+
+Note: Since the data contains more than 1,000,000 users so I sampled 10000 users to perform the following analysis and visualization.
+
+By performing sentiment polarity scoring on the reviews of elite users and regular users separately, we can see the overall polarity distribution. Elite users are more concentrated around 0.25, leaning toward the positive side.
+<img width="2578" height="1638" alt="image" src="https://github.com/user-attachments/assets/394c0bfe-d214-408b-85fa-91319d730160" />
+
+Next, I looked at the keyword distribution for reviews with polarity greater than 0.25 or less than –0.25, and construct a word cloud.
+<img width="4709" height="1311" alt="image" src="https://github.com/user-attachments/assets/a1de2c78-e37a-4bbd-8ce7-988f3d623e84" />
+
+Cap max reviews to 30 for better visuals. ~80% of the users write only about 2 reviews.
+<img width="3010" height="1500" alt="image" src="https://github.com/user-attachments/assets/a9c4078a-fff4-4b18-8d6d-9a6350103c02" />
+
+#### Sentiment Analysis On Gen Korean BBQ House
 
 ## Network Analysis
