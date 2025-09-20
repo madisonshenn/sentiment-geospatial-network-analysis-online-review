@@ -176,15 +176,20 @@ WHERE u.user_id IS NULL;
 ---------------------------------------------------------------------------------------------
 # 4 Exploratory Data Analysis
 
+4.1 
+We want to understand the relationship between the number of “useful” marks and the highest star ratings.
+
+The following regression plots show the trend of how the highest rating (stars) changes as the number of “useful” marks on reviews increases. The x-axis represents thresholds of “useful” marks, ranging from 100 to 1000 in increments of 20. The y-axis represents the highest rating corresponding to each threshold.
+<img width="1610" height="451" alt="image" src="https://github.com/user-attachments/assets/847992ed-51da-4cc2-9abf-2cdf6c476f23" />
+<img width="1597" height="451" alt="image" src="https://github.com/user-attachments/assets/98cb36b4-a8d0-4e6d-9ea9-8de2c167fea9" /> 
+
+4.2 
 <img width="1027" height="474" alt="image" src="https://github.com/user-attachments/assets/0f273ebd-08c0-4e8f-9aed-41d805cd512d" />
 
 
 <img width="1337" height="578" alt="image" src="https://github.com/user-attachments/assets/0ff32923-bd8d-4cad-978a-35de6b40be06" />
 
 <img width="3076" height="1763" alt="image" src="https://github.com/user-attachments/assets/0003be40-624e-46c4-89a4-10a2e9bb85f2" />
-
-Registration Time:
-<img width="4898" height="2741" alt="image" src="https://github.com/user-attachments/assets/af472f0c-2dff-4145-879b-c64ad9fde09e" />
 
 
 ---------------------------------------------------------------------------------------------
@@ -254,12 +259,6 @@ Below is screenshots showing a few timepoints of the locations of the restaurant
    <img src="https://github.com/user-attachments/assets/180a2ca9-0644-4489-a66e-a7d078aeea8c" width="32%" />
    <img src="https://github.com/user-attachments/assets/3f79ff4c-726e-435e-b5d6-de4eb345e1d0" width="32%" />
 </p>
-
-We also want to understand the relationship between the number of “useful” marks and the highest star ratings.
-
-The following regression plots show the trend of how the highest rating (stars) changes as the number of “useful” marks on reviews increases. The x-axis represents thresholds of “useful” marks, ranging from 100 to 1000 in increments of 20. The y-axis represents the highest rating corresponding to each threshold.
-<img width="1610" height="451" alt="image" src="https://github.com/user-attachments/assets/847992ed-51da-4cc2-9abf-2cdf6c476f23" />
-<img width="1597" height="451" alt="image" src="https://github.com/user-attachments/assets/98cb36b4-a8d0-4e6d-9ea9-8de2c167fea9" /> 
 
 ---------------------------------------------------------------------------------------------
 # 6 Sentiment Analysis
