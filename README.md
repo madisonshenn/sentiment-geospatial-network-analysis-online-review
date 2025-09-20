@@ -332,39 +332,56 @@ Visualizations showing bigrams that appear more than 30 times and contain 'pork'
 ---------------------------------------------------------------------------------------------
 # 7 Network and Community Detection
 
-It involves using network analysis techniques to identify groups of businesses or users that are closely related to each other
-based on their interactions on the platform. By doing so, we can identify communities of businesses or users that share
-similar interests, preferences, or behaviors, and use this information to better understand the dynamics of the Yelp platform.
-For example, we can use community detection to identify groups of businesses that are competing with each other in the
-same market segment or location. By analyzing the interactions and relationships between these businesses, we can better
-understand their competitive landscape and help them develop more effective marketing strategies.
-Similarly, we can use community detection to identify groups of users that are interacting with each other on the platform,
-such as users who frequently review or recommend the same types of businesses. By analyzing these user communities, we
-can better understand their preferences and behaviors, and use this information to improve the platform's recommendation
-algorithms and personalized services.
-Overall, community detection is a powerful tool for understanding the complex network of relationships between businesses
-and users on the Yelp platform, and can help businesses and the platform better understand their customers and improve their
-services.
+## 7.1 Building the User Friendship Network
+To examine the social dimension of Yelp, we constructed a friendship graph using the friends field in yelp_user.csv. This allows us to investigate clustering patterns, overall connectivity, and the presence of potential influencers.  
+
+Each user_id was paired with its corresponding friend list (comma-separated) to generate edge relationships. Using NetworkX, we created an undirected graph. A global sample of roughly 6,000 users was drawn, and the structure was visualized with the spring layout algorithm.  
+
+<img width="414" height="216" alt="Screenshot 2025-09-20 015237" src="https://github.com/user-attachments/assets/8a1a5341-d1a4-4840-a057-5f5de7a9bc39" />
+
+Key Findings:  
+* The global network is highly sparse: many users are isolated or connected to only one other person.
+* A small number of central nodes act as network hubs, likely corresponding to Elite or particularly social users.
+* The Yelp friendship graph is loosely connected overall, implying that user activity is driven more by review behavior than by friendships.  
+
+Implication  
+While Yelp provides a friend system, it does not appear to be the primary driver of engagement or discovery. This insight is relevant when considering social-based recommendation methods—collaborative filtering may be limited in effectiveness without stronger graph density. To uncover meaningful community structures, a regional zoom-in is explored in the next section.
+
+## 7.2 Stuttgart Subgraph and Community Detection
+
+To capture more tangible community behavior, we focused on the Stuttgart, Germany region. We filtered users who had reviewed Stuttgart businesses and then constructed their friend network.  
+
+Using NetworkX, we built the Stuttgart-specific subgraph and applied degree centrality to highlight influential users. Then we ran the Louvain algorithm to detect communities.  
+
+Visualizing the results with multiple layouts, including spring, circular, and Kamada–Kawai:
+<img width="454" height="443" alt="Screenshot 2025-09-20 015249" src="https://github.com/user-attachments/assets/476c9e8f-0d3c-4013-ae93-8428ed96bbe9" />
+
+Key Findings:   
+* Unlike the global graph, the Stuttgart network is denser and exhibits clear community clusters.
+* The Louvain method identified five primary communities, which likely represent real social circles or groups with common interests.
+* Influential users, revealed through centrality measures, could serve as amplifiers for local promotions or targeted content.  
+
+Implication:  
+Regional analysis reveals micro-community structures that are not visible at the global scale. For Yelp, this indicates that a localized approach to social features could be more effective—for instance, boosting elite content within communities or applying community-aware ranking in recommendations and marketing campaigns.
 
 ---------------------------------------------------------------------------------------------
-# 8 Strategic Takeaways
-
-Insights by Stakeholder Perspective
-1. User Perspective
-
-For users, a key motivation is often how to efficiently earn the Elite User badge, which brings access to special promotions and increased visibility on the platform. Analysis shows that the most important factor is the volume of reviews and photos posted, particularly reviews. Long-form reviews with higher information content are more impactful than short or stylistically polished ones. Reviews that highlight overlooked issues at otherwise highly-rated restaurants are especially likely to attract attention. Geographically, users located in states such as Nevada and Arizona have a higher likelihood of being awarded Elite status, due to the density of high-traffic businesses in these regions.
+# 8 Insights by Stakeholder Perspective
+### 1. User Perspective
+For users, a key motivation is often how to efficiently earn the Elite User badge, which brings access to special promotions and increased visibility on the platform. Analysis shows that the most important factor is the volume of reviews and photos posted, particularly reviews. Long-form reviews with higher information content are more impactful than short or stylistically polished ones. Reviews that highlight overlooked issues at otherwise highly-rated restaurants are especially likely to attract attention. Geographically, users located in states such as Nevada and Arizona have a higher likelihood of being awarded Elite status, due to the density of high-traffic businesses in these regions.  
 
 For general users who are less concerned with status, the primary goal remains finding restaurants that match their preferences. Overall, restaurant star ratings and user review scores are broadly aligned, providing a reliable guide to quality. However, five-star ratings may sometimes be inflated, making it important to cross-check against detailed user feedback.
 
-2. Business Perspective
+### 2. Business Perspective
 
-From the perspective of restaurant owners, increasing visibility and customer traffic can be achieved by opening locations in states with larger markets such as Nevada, Arizona, North Carolina, Ohio, and Pennsylvania. For those aiming to achieve or maintain five-star status, Nevada and Arizona are particularly promising markets. In addition to fundamentals like foot traffic and operating days, maintaining a low rate of negative reviews is critical.
+From the perspective of restaurant owners, increasing visibility and customer traffic can be achieved by opening locations in states with larger markets such as Nevada, Arizona, North Carolina, Ohio, and Pennsylvania. For those aiming to achieve or maintain five-star status, Nevada and Arizona are particularly promising markets. In addition to fundamentals like foot traffic and operating days, maintaining a low rate of negative reviews is critical.  
 
 Restaurants less concerned about location can still improve ratings by maximizing weekly operating days and ensuring consistently high customer satisfaction. Simply put, operational consistency and strong review management are more influential than geography when aiming for higher average ratings.
 
-3. Platform Perspective
+### 3. Platform Perspective
 
-From the platform’s standpoint, existing user engagement is strong, but new user registrations have declined year over year. This suggests both market saturation and the need for new growth strategies. Potential measures include seasonal promotions (e.g., partnering with restaurants during summer, when dining out activity peaks) and offering targeted discounts to attract new users. Expanding into new states or international markets also presents a viable path for sustaining growth.
+From the platform’s standpoint, existing user engagement is strong, but new user registrations have declined year over year. This suggests both market saturation and the need for new growth strategies. Potential measures include seasonal promotions (e.g., partnering with restaurants during summer, when dining out activity peaks) and offering targeted discounts to attract new users. Expanding into new states or international markets also presents a viable path for sustaining growth.  
 
 For existing users—especially active non-Elite users—the platform could introduce cyclical engagement campaigns that reward activity milestones (e.g., posting reviews, check-ins, or photos). “Come-back” benefits could re-engage inactive users, while further enhancing the perks of Elite membership would incentivize broader participation and raise overall community quality.
+
+# 9 Strategic Takeaways
 
