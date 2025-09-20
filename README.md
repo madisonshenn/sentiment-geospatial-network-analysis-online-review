@@ -176,6 +176,17 @@ WHERE u.user_id IS NULL;
 ---------------------------------------------------------------------------------------------
 # 4 Exploratory Data Analysis
 
+<img width="1027" height="474" alt="image" src="https://github.com/user-attachments/assets/0f273ebd-08c0-4e8f-9aed-41d805cd512d" />
+
+
+<img width="1337" height="578" alt="image" src="https://github.com/user-attachments/assets/0ff32923-bd8d-4cad-978a-35de6b40be06" />
+
+<img width="3076" height="1763" alt="image" src="https://github.com/user-attachments/assets/0003be40-624e-46c4-89a4-10a2e9bb85f2" />
+
+Registration Time:
+<img width="4898" height="2741" alt="image" src="https://github.com/user-attachments/assets/af472f0c-2dff-4145-879b-c64ad9fde09e" />
+
+
 ---------------------------------------------------------------------------------------------
 # 5 Geospatial Analysis On Reviews
 In this section, I will show how I analyzed the geographic locations of businesses/restaurants. First, I looked at a global view of Yelp businesses. Next, I zoomed in on the two most concentrated regions (North America and Europe), and explored the cities with the highest number of reviews within those two regions respectively.
