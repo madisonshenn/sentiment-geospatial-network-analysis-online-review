@@ -154,8 +154,11 @@ Cap max reviews to 30 for better visuals. ~80% of the users write only about 2 r
 <img width="3010" height="1500" alt="image" src="https://github.com/user-attachments/assets/a9c4078a-fff4-4b18-8d6d-9a6350103c02" />
 
 ## 6.2 Sentiment Analysis On Gen Korean BBQ House Reviews
-Firstly, I found the restaurant with most five stars reviews from users which is Gen Lorean BBQ House Reviews. 
-Why
+Why do we want to apply more in-depth sentiment analysis using tools such as VADER and AFINN, specifically on popular restaurants?
+* A 5-star rating doesn’t explain why a restaurant is popular or unpopular, but sentiment analysis of review text captures nuances of customer experience (e.g., “great food but slow service”). This lets the platform identify drivers of positive vs. negative reviews.
+* VADER and AFINN can quantify sentiment polarity and intensity across thousands of reviews. Platforms can provide restaurants with analytics dashboards on, for instance, what aspects are most praised (food quality, atmosphere) and what aspects need improvement (service speed, pricing). This strengthens the platform’s value proposition to business owners, encouraging them to engage (or advertise).
+* Deeper sentiment signals can be used to enhance search and ranking algorithms (e.g., show “family-friendly” or “great service” restaurants). Thus, enhancing user experience.
+* We can also use sentiment analysis to track shifts over time. This is valuable in situation like flagging early warning signals is an ever popular restaurant’s sentiment score starts dropping due to service or quality declining.
 
 ### 6.2.1 EDA and Top Common Words for this restaurants
 
