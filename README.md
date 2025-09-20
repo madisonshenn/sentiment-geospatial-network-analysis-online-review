@@ -179,15 +179,18 @@ Implementation:
 4. Sentiment Analysis: Use VADER to assign sentiment scores to each word.
 5. Lexicon Classification: Classify words into positive and non-positive categories based on their sentiment scores.
 
-Generated visualizations:
-Left: word clouds for positive and non-positive words
-Right: the top 20 positive and negative sentimental words based on the scores
+#### Word Clouds
+Left: word clouds for positive words  
+Right: word clouds for non-positive words
 <p align="center">
   <img src="https://github.com/user-attachments/assets/28552f2f-1e6f-4a04-945a-1bb350ebb219"
  width="45%" />
   &nbsp;
-  <img src="https://github.com/user-attachments/assets/26ec4303-9ca2-4a7d-a7c7-8d4ecada4512" width="45%" />
+  <img src="https://github.com/user-attachments/assets/13f1901a-f41f-4255-9b87-6708af4ed0e0"  width="45%" />
 </p>
+
+#### Visualizing the top 20 positive and negative sentimental words based on the scores
+<img src="https://github.com/user-attachments/assets/26ec4303-9ca2-4a7d-a7c7-8d4ecada4512" width="80%" />
 
 ### 6.2.3 Calculate sentiment for the reviews using AFINN
 Implementation:
