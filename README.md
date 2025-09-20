@@ -18,7 +18,7 @@ Please jump to the specific section of your interest if needed:
 - [6 Sentiment Analysis](#6-sentiment-analysis)  
   a. general sentiment analysis across platform  
   b. in depth sentiment analysis on the reviews of a popular spot  
-- [7 Network Analysis](#7-network-analysis)
+- [7 Network and Community Detection](#7-network-and-community-detection)
 - [8 Strategic Takeaways](#8-strategic-takeaways)
 
 ---------------------------------------------------------------------------------------------
@@ -56,9 +56,122 @@ The following 6 datasets are integrated to perform further analysis:
 ---------------------------------------------------------------------------------------------
 # 3 Data Cleaning and Preprocessing with MySQL
 ## 3.1 Data Cleaning
+Before analysis, I performed systematic data cleaning and preprocessing using MySQL and key steps are summarized here with selected SQL queries used.
+
+### Key Steps
+1. Detecting anomalies and invalid values:  
+* Checked for missing or out-of-range values in business names, states, and star ratings.
+* Verified reviews, tips, and check-ins had valid IDs and timestamps.  
+<pre> ```sql 
+-- Find businesses with invalid star ratings
+SELECT business_id, name, stars
+FROM yelp_business
+WHERE stars < 0 OR stars > 5;
+
+-- Check for reviews with missing user or business IDs
+SELECT *
+FROM yelp_review
+WHERE user_id IS NULL OR business_id IS NULL;
+    ``` </pre>
+
+2. Filtering and restructuring data:  
+* Separated businesses into open vs. closed.
+* Removed businesses without valid operating hours.
+* Dropped user records missing essential information.  
+<pre> ```sql 
+-- Split businesses into open and closed groups
+SELECT *
+FROM yelp_business
+WHERE is_open = 1;  -- open businesses
+
+SELECT *
+FROM yelp_business
+WHERE is_open = 0;  -- closed businesses
+
+-- Filter out businesses with no valid hours
+DELETE FROM yelp_business_hours
+WHERE monday = 'None'
+  AND tuesday = 'None'
+  AND wednesday = 'None'
+  AND thursday = 'None'
+  AND friday = 'None'
+  AND saturday = 'None'
+  AND sunday = 'None';
+
+-- Remove users missing key attributes
+DELETE FROM yelp_user
+WHERE name IS NULL
+   OR review_count IS NULL
+   OR yelping_since IS NULL;
+    ``` </pre>
+
+3. Validation checks:  
+* confirmed no invalid rows remain in reviews, tips, and check-ins.  
+* Ensured user metrics stayed within logical ranges.  
+<pre> ```sql 
+-- Check user metrics are valid
+SELECT user_id, average_stars, fans
+FROM yelp_user
+WHERE average_stars < 0 OR average_stars > 5
+   OR fans < 0;
+
+-- Confirm no invalid rows in review table
+SELECT COUNT(*)
+FROM yelp_review
+WHERE stars NOT BETWEEN 1 AND 5;
+    ``` </pre>     
 
 ---------------------------------------------------------------------------------------------
 ## 3.2 Data Preprocessing
+After cleaning, the dataset was preprocessed to ensure usability and consistency for analysis.
+1. Split businesses into open and closed categories using the is_open flag.  
+
+<pre> ```sql 
+  -- Select open businesses
+SELECT *
+FROM yelp_business
+WHERE is_open = 1;
+
+-- Select closed businesses
+SELECT *
+FROM yelp_business
+WHERE is_open = 0;
+    ``` </pre>  
+
+2. User Table (yelp_user)  
+* Validated user activity metrics:  
+    average_stars must be between 0 and 5. 
+    useful, funny, cool, and fans must be non-negative.  
+* Dropped users with invalid metrics.  
+
+<pre> ```sql 
+-- Check for invalid user metrics
+SELECT user_id, average_stars, fans, useful, funny, cool
+FROM yelp_user
+WHERE average_stars < 0 OR average_stars > 5
+   OR fans < 0
+   OR useful < 0
+   OR funny < 0
+   OR cool < 0;
+    ``` </pre>
+    
+3. Review, Tip, and Check-in Tables  
+* Verified that cleaned data contained no invalid references to users or businesses.
+* Ensured consistency across foreign key relationships.
+
+<pre> ```sql 
+-- Confirm all review records reference valid businesses
+SELECT r.review_id
+FROM yelp_review r
+LEFT JOIN yelp_business b ON r.business_id = b.business_id
+WHERE b.business_id IS NULL;
+
+-- Confirm all review records reference valid users
+SELECT r.review_id
+FROM yelp_review r
+LEFT JOIN yelp_user u ON r.user_id = u.user_id
+WHERE u.user_id IS NULL;
+    ``` </pre>
  
 ---------------------------------------------------------------------------------------------
 # 4 Exploratory Data Analysis
@@ -217,9 +330,41 @@ Visualizations showing bigrams that appear more than 30 times and contain 'pork'
 </p>
 
 ---------------------------------------------------------------------------------------------
-# 7 Network Analysis
+# 7 Network and Community Detection
 
+It involves using network analysis techniques to identify groups of businesses or users that are closely related to each other
+based on their interactions on the platform. By doing so, we can identify communities of businesses or users that share
+similar interests, preferences, or behaviors, and use this information to better understand the dynamics of the Yelp platform.
+For example, we can use community detection to identify groups of businesses that are competing with each other in the
+same market segment or location. By analyzing the interactions and relationships between these businesses, we can better
+understand their competitive landscape and help them develop more effective marketing strategies.
+Similarly, we can use community detection to identify groups of users that are interacting with each other on the platform,
+such as users who frequently review or recommend the same types of businesses. By analyzing these user communities, we
+can better understand their preferences and behaviors, and use this information to improve the platform's recommendation
+algorithms and personalized services.
+Overall, community detection is a powerful tool for understanding the complex network of relationships between businesses
+and users on the Yelp platform, and can help businesses and the platform better understand their customers and improve their
+services.
 
 ---------------------------------------------------------------------------------------------
 # 8 Strategic Takeaways
+
+Insights by Stakeholder Perspective
+1. User Perspective
+
+For users, a key motivation is often how to efficiently earn the Elite User badge, which brings access to special promotions and increased visibility on the platform. Analysis shows that the most important factor is the volume of reviews and photos posted, particularly reviews. Long-form reviews with higher information content are more impactful than short or stylistically polished ones. Reviews that highlight overlooked issues at otherwise highly-rated restaurants are especially likely to attract attention. Geographically, users located in states such as Nevada and Arizona have a higher likelihood of being awarded Elite status, due to the density of high-traffic businesses in these regions.
+
+For general users who are less concerned with status, the primary goal remains finding restaurants that match their preferences. Overall, restaurant star ratings and user review scores are broadly aligned, providing a reliable guide to quality. However, five-star ratings may sometimes be inflated, making it important to cross-check against detailed user feedback.
+
+2. Business Perspective
+
+From the perspective of restaurant owners, increasing visibility and customer traffic can be achieved by opening locations in states with larger markets such as Nevada, Arizona, North Carolina, Ohio, and Pennsylvania. For those aiming to achieve or maintain five-star status, Nevada and Arizona are particularly promising markets. In addition to fundamentals like foot traffic and operating days, maintaining a low rate of negative reviews is critical.
+
+Restaurants less concerned about location can still improve ratings by maximizing weekly operating days and ensuring consistently high customer satisfaction. Simply put, operational consistency and strong review management are more influential than geography when aiming for higher average ratings.
+
+3. Platform Perspective
+
+From the platform’s standpoint, existing user engagement is strong, but new user registrations have declined year over year. This suggests both market saturation and the need for new growth strategies. Potential measures include seasonal promotions (e.g., partnering with restaurants during summer, when dining out activity peaks) and offering targeted discounts to attract new users. Expanding into new states or international markets also presents a viable path for sustaining growth.
+
+For existing users—especially active non-Elite users—the platform could introduce cyclical engagement campaigns that reward activity milestones (e.g., posting reviews, check-ins, or photos). “Come-back” benefits could re-engage inactive users, while further enhancing the perks of Elite membership would incentivize broader participation and raise overall community quality.
 
