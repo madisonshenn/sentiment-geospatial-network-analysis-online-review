@@ -21,12 +21,11 @@ Please jump to the specific section of your interest if needed:
 - [7 Network Analysis](#7-network-analysis)
 - [8 Strategic Takeaways](#8-strategic-takeaways)
 
+---------------------------------------------------------------------------------------------
 # TL;DR
-Integrated data using mysql  
-Leveraged natural language processing (sentiment analysis), network analysis, and geospatial analytics on an online review platform to detect and interpret user behaviors and preferences.
-
-In this project, I used a collection of data related to businesses, reviews, users, and other interactions on the Yelp platform. The dataset includes information from 8 metropolitan areas in the USA and Canada, covering a variety of business categories and user demographics, which provides a valuable resource for understanding the factors that influence customer satisfaction, business success, and platform growth. Thus, the algorithms and models tested and developed from this data and project can be applied to other online platforms and domains.
-
+I used MySQL for data integration, cleaning, and preprocessing, and Python for exploratory and advanced analytics. The analysis combined natural language processing (sentiment analysis), network analysis, and geospatial methods to uncover user behaviors and preferences on the Yelp platform.  
+The dataset covers businesses, reviews, users, and interactions across eight metropolitan areas, spanning diverse categories and demographics. This provides a rich resource for understanding the factors driving customer satisfaction, business success, and platform growth. The algorithms and models developed in this project are broadly transferable and can be applied to other online platforms and domains.  
+---------------------------------------------------------------------------------------------
 # 1 Stakeholder Value Propositions
 To analyze the performance of online sales campaign and provide recommendations for improving future sales, I performed sentiment, network, and geospatial analysis to examine the data from following three stakeholders' perspectives:
 ### 1. Users' Perspectives
@@ -42,31 +41,29 @@ To analyze the performance of online sales campaign and provide recommendations 
    3.1 How many users registered and how many reviews were posted each year and each month? 
    3.2 What are the number of and proportions of elite users?
    3.3 What are the annual retention rates for all users, and specifically for elite users?
-
+---------------------------------------------------------------------------------------------
 # 2 Data Description
-
-The following 6 datasets are integrated to perform further analysis:
-
+The following 6 datasets are integrated to perform further analysis:  
 1. yelp_business.csv: This file contains information about businesses on the Yelp platform, including their ID, name, neighborhood, address, city, state, postal_code, latitude and longitude, star rating, review count, and categories.
 2. yelp_business_hours.csv: This file contains information about the hours of operation of businesses, including the business ID and opening and closing times for each day of the week.
 3. yelp_checkin.csv: This file contains businesses' registration information, including the time and date when businesses registered on Yelp.
 4. yelp_review.csv: This file contains customers' reviews, including the review ID, user ID, business ID, rating stars, reviews in text, number of useful/funny/cool and the date that reviewed was posted.
 5. yelp_tip.csv: This file contains data related to tips, such as text about tips, the date that reviewed was posted, business ID, and user ID.
 6. yelp_user.csv: This file contains Yelp users information, including their ID, name, registration time, review count, the number of times their reviews received useful/funny/cool, average stars of their ratings, and other information about their past reviews.
-
+---------------------------------------------------------------------------------------------
 # 3 Data Cleaning and Preprocessing with MySQL
 ## 3.1 Data Cleaning
 
+---------------------------------------------------------------------------------------------
 ## 3.2 Data Preprocessing
  
-
+---------------------------------------------------------------------------------------------
 # 4 Exploratory Data Analysis
 
-
+---------------------------------------------------------------------------------------------
 # 5 Geospatial Analysis On Reviews
-
 In this section, I will show how I analyzed the geographic locations of businesses/restaurants. First, I looked at a global view of Yelp businesses. Next, I zoomed in on the two most concentrated regions (North America and Europe), and explored the cities with the highest number of reviews within those two regions respectively.
-
+---------------------------------------------------------------------------------------------
 ## 5.1 Global Visualization and Analysis
 <table>
   <tr>
@@ -85,7 +82,7 @@ Zoom In to North America and Europe
   &nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="30%" />
 </p>
-
+---------------------------------------------------------------------------------------------
 ## 5.2 City level visualiztaion and analysis
 
 I used Matplotlib to create the following four scatter plots. Firstly, I selected businesses located within small geographic bounding boxes around Las Vegas, Pheonix, Stuttgart, and Edinburgh, by filtering latitude and longitude ranges from the dataset rating_data. For each city, I ploted the businesses’ coordinates as scatter points on a black background. 
@@ -115,7 +112,7 @@ Following are the screenshots showing the time-dynamic of reviews (rating stars)
    <img src="https://github.com/user-attachments/assets/6a473e3a-f909-441c-a8ae-b3fd41f38307" width="32%" />
    <img src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" width="32%" />
 </p>
-
+---------------------------------------------------------------------------------------------
 ## 5.3 Tracking High-Value Users (HVUs)
 It's useful to focus on the top-ranking users from the review dataset. Reviews from HVUs highlight popular restaurants and emerging trends in specific regions. Platform like Yelp can monetize these insights by guiding business advertisers to understand where and how to invest marketing spend. Besides, HVUs often write detailed, useful, and high-signal reviews (frequently marked as useful/funny/cool). Thus, by monitoring their activity, Yelp can maintain high-quality content, which directly drives consumer trust and platform stickiness. From tracking HVUs activities, platform can also identify high-value business categories and regions that generate the most engagement.
 
@@ -132,9 +129,9 @@ We also want to understand the relationship between the number of “useful” m
 
 The following regression plots show the trend of how the highest rating (stars) changes as the number of “useful” marks on reviews increases. The x-axis represents thresholds of “useful” marks, ranging from 100 to 1000 in increments of 20. The y-axis represents the highest rating corresponding to each threshold.
 <img width="1610" height="451" alt="image" src="https://github.com/user-attachments/assets/847992ed-51da-4cc2-9abf-2cdf6c476f23" />
-<img width="1597" height="451" alt="image" src="https://github.com/user-attachments/assets/98cb36b4-a8d0-4e6d-9ea9-8de2c167fea9" />
+<img width="1597" height="451" alt="image" src="https://github.com/user-attachments/assets/98cb36b4-a8d0-4e6d-9ea9-8de2c167fea9" /> 
 
-
+---------------------------------------------------------------------------------------------
 # 6 Sentiment Analysis
 This section includes a general analysis across the platform and a more in depth sentiment analysis on reviews of a specific restaurant.
 Quick Links to jump to the second part for more in depth analysis on the reviews of a popular spot: - [Sentiment Analysis On Gen Korean BBQ House Reviews](#sentiment-analysis-on-gen-korean-bbq-house-reviews)
@@ -153,6 +150,7 @@ Next, I looked at the keyword distribution for reviews with polarity greater tha
 Cap max reviews to 30 for better visuals. ~80% of the users write only about 2 reviews.
 <img width="3010" height="1500" alt="image" src="https://github.com/user-attachments/assets/a9c4078a-fff4-4b18-8d6d-9a6350103c02" />
 
+---------------------------------------------------------------------------------------------
 ## 6.2 Sentiment Analysis On Gen Korean BBQ House Reviews
 Why do we want to apply more in-depth sentiment analysis using tools such as VADER and AFINN, specifically on popular restaurants?
 * A 5-star rating doesn’t explain why a restaurant is popular or unpopular, but sentiment analysis of review text captures nuances of customer experience (e.g., “great food but slow service”). This lets the platform identify drivers of positive vs. negative reviews.
@@ -164,6 +162,7 @@ Why do we want to apply more in-depth sentiment analysis using tools such as VAD
 
 Distributions of review types:
 <img width="2531" height="1652" alt="image" src="https://github.com/user-attachments/assets/8ef8175d-87ad-43f5-97ba-0bab38bf415d" />
+<img width="5370" height="1770" alt="image" src="https://github.com/user-attachments/assets/df0a2e2f-2b76-4c40-b3f7-41742bfde308" />
 
 Word cloud & top ten most common words in the reviews of this restaurant:
 <p align="center">
@@ -211,7 +210,9 @@ Visualizations showing bigrams that appear more than 30 times and contain 'pork'
   <img src="https://github.com/user-attachments/assets/f06762d5-cbfe-49b2-a44b-2eb0ebd1ea48" width="32%" />
 </p>
 
+---------------------------------------------------------------------------------------------
 # 7 Network Analysis
 
+---------------------------------------------------------------------------------------------
 # 8 Strategic Takeaways
 
