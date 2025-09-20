@@ -72,8 +72,8 @@ In this section, I will show how I analyzed the geographic locations of business
 
 Zoom In to North America and Europe
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" width="30%" />
-  <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="40%" />
+  <img src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" width="40%" />
+  <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="30%" />
 </p>
 
 #### City level visualiztaion and analysis
@@ -95,9 +95,9 @@ In this animation, businesses are highlighted according to their star ratings. T
 It turns out that both well-rated and poorly-rated businesses are fairly evenly distributed across the city.
 Following are the screenshots showing the time-dynamic of reviews (rating stars) in Las Vegas:
 <p align="center">
-   <img width="811" height="503" alt="Screenshot 2025-09-19 222905" src="https://github.com/user-attachments/assets/023fe3df-ec26-470d-bba7-8e1979628484" width="20%" />
-   <img width="807" height="502" alt="Screenshot 2025-09-19 222918" src="https://github.com/user-attachments/assets/1b107b2c-20cf-4ec5-bcce-79735be753f0" width="20%" />
-   <img width="810" height="504" alt="Screenshot 2025-09-19 222926" src="https://github.com/user-attachments/assets/c0e2f187-f07d-4d0c-81f3-4c90fb53c06c" width="20%" />
+   <img src="https://github.com/user-attachments/assets/023fe3df-ec26-470d-bba7-8e1979628484" width="30%" />
+   <img src="https://github.com/user-attachments/assets/1b107b2c-20cf-4ec5-bcce-79735be753f0" width="30%" />
+   <img src="https://github.com/user-attachments/assets/c0e2f187-f07d-4d0c-81f3-4c90fb53c06c" width="30%" />
 </p>
 
 <p align="center">
