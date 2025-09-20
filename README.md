@@ -72,8 +72,8 @@ In this section, I will show how I analyzed the geographic locations of business
 
 Zoom In to North America and Europe
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" width="40%" />
-  <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="30%" />
+  <img src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" width="45%" />
+  <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="25%" />
 </p>
 
 #### City level visualiztaion and analysis
@@ -101,9 +101,9 @@ Following are the screenshots showing the time-dynamic of reviews (rating stars)
 </p>
 
 <p align="center">
-   <img width="815" height="500" alt="Screenshot 2025-09-19 222934" src="https://github.com/user-attachments/assets/d1663ea3-1868-4aa5-9e30-b99a1fb603b6" width="20%" />
-   <img width="820" height="500" alt="Screenshot 2025-09-19 222941" src="https://github.com/user-attachments/assets/6a473e3a-f909-441c-a8ae-b3fd41f38307" width="20%" />
-   <img width="819" height="512" alt="Screenshot 2025-09-19 222950" src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" width="20%" />
+   <img src="https://github.com/user-attachments/assets/d1663ea3-1868-4aa5-9e30-b99a1fb603b6" width="30%" />
+   <img src="https://github.com/user-attachments/assets/6a473e3a-f909-441c-a8ae-b3fd41f38307" width="30%" />
+   <img src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" width="30%" />
 </p>
 
 ## Sentiment Analysis
