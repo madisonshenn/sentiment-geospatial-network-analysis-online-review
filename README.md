@@ -4,33 +4,25 @@
 
 Please jump to the specific section of your interest if needed:
 
-- [1 Stakeholder Value Propositions](#1-stakeholder-value-propositions)
-
-  a. users' perspectives
-  
-  b. businesses' perspectives
-  
-  c. platform's perspectives
+- [1 Stakeholder Value Propositions](#1-stakeholder-value-propositions)  
+  a. users' perspectives  
+  b. businesses' perspectives  
+  c. platform's perspectives  
 - [2 Data Description](#2-data-description)
 - [3 Data Cleaning and Preprocessing with MySQL](#3-data-cleaning-and-preprocessing-with-mysql)
 - [4 Exploratory Data Analysis](#4-exploratory-data-analysis)
-- [5 Geospatial Analysis On Reviews](#5-geospatial-analysis-on-reviews)
-
-  a. global level visualization and analysis
-
-  b. city level visualization and analysis
-
-  c. tracking high value users (HVUs)
-- [6 Sentiment Analysis](#6-sentiment-analysis)
-
-  a. general sentiment analysis across platform
-
-  b. in depth sentiment analysis on the reviews of a popular spot
+- [5 Geospatial Analysis On Reviews](#5-geospatial-analysis-on-reviews)  
+  a. global level visualization and analysis  
+  b. city level visualization and analysis  
+  c. tracking high value users (HVUs)  
+- [6 Sentiment Analysis](#6-sentiment-analysis)  
+  a. general sentiment analysis across platform  
+  b. in depth sentiment analysis on the reviews of a popular spot  
 - [7 Network Analysis](#7-network-analysis)
 - [8 Strategic Takeaways](#8-strategic-takeaways)
 
 # TL;DR
-Integrated data using mysql
+Integrated data using mysql  
 Leveraged natural language processing (sentiment analysis), network analysis, and geospatial analytics on an online review platform to detect and interpret user behaviors and preferences.
 
 In this project, I used a collection of data related to businesses, reviews, users, and other interactions on the Yelp platform. The dataset includes information from 8 metropolitan areas in the USA and Canada, covering a variety of business categories and user demographics, which provides a valuable resource for understanding the factors that influence customer satisfaction, business success, and platform growth. Thus, the algorithms and models tested and developed from this data and project can be applied to other online platforms and domains.
@@ -90,6 +82,7 @@ In this section, I will show how I analyzed the geographic locations of business
 Zoom In to North America and Europe
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fe5a4768-0455-42a5-a249-7b04b8ab47b4" width="45%" />
+  &nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="30%" />
 </p>
 
@@ -112,15 +105,15 @@ In this animation, businesses are highlighted according to their star ratings. T
 It turns out that both well-rated and poorly-rated businesses are fairly evenly distributed across the city.
 Following are the screenshots showing the time-dynamic of reviews (rating stars) in Las Vegas:
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/023fe3df-ec26-470d-bba7-8e1979628484" width="30%" />
-   <img src="https://github.com/user-attachments/assets/1b107b2c-20cf-4ec5-bcce-79735be753f0" width="30%" />
-   <img src="https://github.com/user-attachments/assets/c0e2f187-f07d-4d0c-81f3-4c90fb53c06c" width="30%" />
+   <img src="https://github.com/user-attachments/assets/023fe3df-ec26-470d-bba7-8e1979628484" width="32%" />
+   <img src="https://github.com/user-attachments/assets/1b107b2c-20cf-4ec5-bcce-79735be753f0" width="32%" />
+   <img src="https://github.com/user-attachments/assets/c0e2f187-f07d-4d0c-81f3-4c90fb53c06c" width="32%" />
 </p>
 
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/d1663ea3-1868-4aa5-9e30-b99a1fb603b6" width="30%" />
-   <img src="https://github.com/user-attachments/assets/6a473e3a-f909-441c-a8ae-b3fd41f38307" width="30%" />
-   <img src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" width="30%" />
+   <img src="https://github.com/user-attachments/assets/d1663ea3-1868-4aa5-9e30-b99a1fb603b6" width="32%" />
+   <img src="https://github.com/user-attachments/assets/6a473e3a-f909-441c-a8ae-b3fd41f38307" width="32%" />
+   <img src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" width="32%" />
 </p>
 
 ## 5.3 Tracking High-Value Users (HVUs)
@@ -130,9 +123,9 @@ By aggregation function, I found the top users with review['user_id'] == 'CxDOID
 
 Below is screenshots showing a few timepoints of the locations of the restaurants this top users posted reviews about:
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/9641b602-3bd9-43cd-b66a-816f5bdb3619" width="30%" />
-   <img src="https://github.com/user-attachments/assets/180a2ca9-0644-4489-a66e-a7d078aeea8c" width="30%" />
-   <img src="https://github.com/user-attachments/assets/3f79ff4c-726e-435e-b5d6-de4eb345e1d0" width="30%" />
+   <img src="https://github.com/user-attachments/assets/9641b602-3bd9-43cd-b66a-816f5bdb3619" width="32%" />
+   <img src="https://github.com/user-attachments/assets/180a2ca9-0644-4489-a66e-a7d078aeea8c" width="32%" />
+   <img src="https://github.com/user-attachments/assets/3f79ff4c-726e-435e-b5d6-de4eb345e1d0" width="32%" />
 </p>
 
 We also want to understand the relationship between the number of “useful” marks and the highest star ratings.
@@ -144,7 +137,7 @@ The following regression plots show the trend of how the highest rating (stars) 
 
 # 6 Sentiment Analysis
 This section includes a general analysis across the platform and a more in depth sentiment analysis on reviews of a specific restaurant.
-Quick Links to jump to the second part: - [Sentiment Analysis On Gen Korean BBQ House Reviews](#sentiment-analysis-on-gen-korean-bbq-house-reviews)
+Quick Links to jump to the second part for more in depth analysis on the reviews of a popular spot: - [Sentiment Analysis On Gen Korean BBQ House Reviews](#sentiment-analysis-on-gen-korean-bbq-house-reviews)
 
 ## 6.1 Sentiment Analysis Platform Wide
 How I did the sentiment analysis in this section: I created a TextBlob object blob to represent the text to be processed. Then, by calling methods of the TextBlob object such as words, tags, noun_phrases, and sentiment, it performs text processing and sentiment analysis. For example, if the input text is 'I love this restaurant! It’s amazing.'. The TextBlob object blob executes tokenization, part-of-speech tagging, noun phrase extraction, and sentiment analysis, and outputs the corresponding results.
@@ -171,8 +164,9 @@ Distributions of review types:
 
 Word cloud & top ten most common words in the reviews of this restaurant:
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/c2ea0fdb-9f21-404a-a12f-b3ac754a9d9d"  width="40%" />
-  <img src="https://github.com/user-attachments/assets/73a5527d-087e-41c3-afea-4a9905d6f756"  width="40%" />
+  <img src="https://github.com/user-attachments/assets/c2ea0fdb-9f21-404a-a12f-b3ac754a9d9d"  width="45%" />
+  &nbsp;
+  <img src="https://github.com/user-attachments/assets/73a5527d-087e-41c3-afea-4a9905d6f756"  width="45%" />
 </p>
 
 ### 6.2.2 Sentiment analysis: positive and not so postive words
@@ -189,9 +183,10 @@ Generated visualizations:
 Left: word clouds for positive and non-positive words
 Right: the top 20 positive and negative sentimental words based on the scores
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/7d6f4837-f3da-4fef-914f-24eaac8f4fd9"
- width="40%" />
-   <img src="https://github.com/user-attachments/assets/7ca76305-bcf0-4929-bc50a2cc34861b7e"  width="40%" />
+  <img src="https://github.com/user-attachments/assets/28552f2f-1e6f-4a04-945a-1bb350ebb219"
+ width="45%" />
+  &nbsp;
+  <img src="https://github.com/user-attachments/assets/26ec4303-9ca2-4a7d-a7c7-8d4ecada4512" width="45%" />
 </p>
 
 ### 6.2.3 Calculate sentiment for the reviews using AFINN
@@ -201,13 +196,13 @@ Implementation:
 3. Ranking and Display: Sort all reviews by sentiment score and display the top six reviews with their sentiment scores.
 
 Visualization showing bigrams that appeared more that 30 times
-  <img src="https://github.com/user-attachments/assets/7b5dd17b-763c-4091-9aea-01fcb4811b50" width="70%" />
+  <img src="https://github.com/user-attachments/assets/7b5dd17b-763c-4091-9aea-01fcb4811b50" width="100%" />
 
 Visualizations showing bigrams that appear more than 30 times and contain 'pork', 'bbq', or 'service'.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1216aced-eb86-4faf-b02a-37e336354543" width="30%" />
-  <img src="https://github.com/user-attachments/assets/a5bfdb5e-9696-44be-a004-9a293711f248" width="30%" />
-  <img src="https://github.com/user-attachments/assets/f06762d5-cbfe-49b2-a44b-2eb0ebd1ea48" width="30%" />
+  <img src="https://github.com/user-attachments/assets/1216aced-eb86-4faf-b02a-37e336354543" width="32%" />
+  <img src="https://github.com/user-attachments/assets/a5bfdb5e-9696-44be-a004-9a293711f248" width="32%" />
+  <img src="https://github.com/user-attachments/assets/f06762d5-cbfe-49b2-a44b-2eb0ebd1ea48" width="32%" />
 </p>
 
 # 7 Network Analysis
