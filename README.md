@@ -22,9 +22,10 @@ Please jump to the specific section of your interest if needed:
 - [8 Strategic Takeaways](#8-strategic-takeaways)
 
 ---------------------------------------------------------------------------------------------
-# TL;DR
+# TL;DR  
 I used MySQL for data integration, cleaning, and preprocessing, and Python for exploratory and advanced analytics. The analysis combined natural language processing (sentiment analysis), network analysis, and geospatial methods to uncover user behaviors and preferences on the Yelp platform.  
 The dataset covers businesses, reviews, users, and interactions across eight metropolitan areas, spanning diverse categories and demographics. This provides a rich resource for understanding the factors driving customer satisfaction, business success, and platform growth. The algorithms and models developed in this project are broadly transferable and can be applied to other online platforms and domains.  
+
 ---------------------------------------------------------------------------------------------
 # 1 Stakeholder Value Propositions
 To analyze the performance of online sales campaign and provide recommendations for improving future sales, I performed sentiment, network, and geospatial analysis to examine the data from following three stakeholders' perspectives:
@@ -41,6 +42,7 @@ To analyze the performance of online sales campaign and provide recommendations 
    3.1 How many users registered and how many reviews were posted each year and each month? 
    3.2 What are the number of and proportions of elite users?
    3.3 What are the annual retention rates for all users, and specifically for elite users?
+   
 ---------------------------------------------------------------------------------------------
 # 2 Data Description
 The following 6 datasets are integrated to perform further analysis:  
@@ -50,6 +52,7 @@ The following 6 datasets are integrated to perform further analysis:
 4. yelp_review.csv: This file contains customers' reviews, including the review ID, user ID, business ID, rating stars, reviews in text, number of useful/funny/cool and the date that reviewed was posted.
 5. yelp_tip.csv: This file contains data related to tips, such as text about tips, the date that reviewed was posted, business ID, and user ID.
 6. yelp_user.csv: This file contains Yelp users information, including their ID, name, registration time, review count, the number of times their reviews received useful/funny/cool, average stars of their ratings, and other information about their past reviews.
+
 ---------------------------------------------------------------------------------------------
 # 3 Data Cleaning and Preprocessing with MySQL
 ## 3.1 Data Cleaning
@@ -63,6 +66,7 @@ The following 6 datasets are integrated to perform further analysis:
 ---------------------------------------------------------------------------------------------
 # 5 Geospatial Analysis On Reviews
 In this section, I will show how I analyzed the geographic locations of businesses/restaurants. First, I looked at a global view of Yelp businesses. Next, I zoomed in on the two most concentrated regions (North America and Europe), and explored the cities with the highest number of reviews within those two regions respectively.
+
 ---------------------------------------------------------------------------------------------
 ## 5.1 Global Visualization and Analysis
 <table>
@@ -82,6 +86,7 @@ Zoom In to North America and Europe
   &nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/30c8d1ec-4f29-44f8-b95f-636775036374" width="30%" />
 </p>
+
 ---------------------------------------------------------------------------------------------
 ## 5.2 City level visualiztaion and analysis
 
@@ -112,6 +117,7 @@ Following are the screenshots showing the time-dynamic of reviews (rating stars)
    <img src="https://github.com/user-attachments/assets/6a473e3a-f909-441c-a8ae-b3fd41f38307" width="32%" />
    <img src="https://github.com/user-attachments/assets/008bc5d2-9db5-4254-b230-a1542524e986" width="32%" />
 </p>
+
 ---------------------------------------------------------------------------------------------
 ## 5.3 Tracking High-Value Users (HVUs)
 It's useful to focus on the top-ranking users from the review dataset. Reviews from HVUs highlight popular restaurants and emerging trends in specific regions. Platform like Yelp can monetize these insights by guiding business advertisers to understand where and how to invest marketing spend. Besides, HVUs often write detailed, useful, and high-signal reviews (frequently marked as useful/funny/cool). Thus, by monitoring their activity, Yelp can maintain high-quality content, which directly drives consumer trust and platform stickiness. From tracking HVUs activities, platform can also identify high-value business categories and regions that generate the most engagement.
@@ -212,6 +218,7 @@ Visualizations showing bigrams that appear more than 30 times and contain 'pork'
 
 ---------------------------------------------------------------------------------------------
 # 7 Network Analysis
+
 
 ---------------------------------------------------------------------------------------------
 # 8 Strategic Takeaways
