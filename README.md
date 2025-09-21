@@ -34,11 +34,12 @@ To analyze the performance of online sales campaign and provide recommendations 
    1.2 Do reviews with a high number of “useful” votes tend to be positive or negative? What is the length of those reviews with high number of "useful" vote? How about the reviews with high number of “funny” and “cool” votes?  
    1.3 What is the relationship between the number of reviews and the number of fans? What is the relationship between the number of fans and whe elite user status?  
    1.4 Which cities receive the most user reviews?  
-#### 2. Businesses/restaurants' Perspectives
+#### 2. Businesses' Perspectives
+(businesses on Yelp: restaurants, shoppings, home services, etc.)
    2.1 How many restaurants fall into each star-rating category? What is the relationship between restaurant ratings, the number of reviews, the average review score, and the ratio of positive to negative reviews?  
    2.2 Analyze which states have the largest number of restaurants, the highest proportion of five-star establishments, and the highest positive review rates, and examine how these patterns relate to geographic location.  
    2.3 What is the relationship between restaurant ratings and days in operation?  
-#### 3. Platform's Perspectives
+#### 3. Yelp/Platform's Perspectives
    3.1 How many users registered and how many reviews were posted each year and each month?  
    3.2 What are the number of and proportions of elite users?  
    3.3 What are the annual retention rates for all users, and specifically for elite users?  
@@ -183,12 +184,23 @@ The following regression plots show the trend of how the highest rating (stars) 
 <img width="1610" height="451" alt="image" src="https://github.com/user-attachments/assets/847992ed-51da-4cc2-9abf-2cdf6c476f23" />
 <img width="1597" height="451" alt="image" src="https://github.com/user-attachments/assets/98cb36b4-a8d0-4e6d-9ea9-8de2c167fea9" /> 
 
-4.2 
+4.2 Start Rating Distribution
+Examining the distribution of star ratings across businesses offers a baseline for understanding perceived quality on Yelp. When ratings are concentrated in the 3.5–4.5 range, it suggests that the platform’s scoring system is generally balanced and reliable. Significant deviations from this pattern, however, may indicate potential issues, like rating inflation or bias, that require further investigation.  
+Insights:  
+* The distribution is right-skewed, with relatively few businesses rated at 1–2 stars and a large concentration at 3.5–4 stars.
+* Five-star ratings are common but not dominant, indicating that perfect scores are attainable yet not universal.  
+Implication:  
+Models and analyses that treat ratings as outcomes (e.g., predicting business success) need to account for this imbalance, as businesses rarely fall at the extremes. From a business perspective, even small improvements near the 3.5–4 star threshold can have a significant effect on customer perception and visibility.  
 <img width="1027" height="474" alt="image" src="https://github.com/user-attachments/assets/0f273ebd-08c0-4e8f-9aed-41d805cd512d" />
 
-
-<img width="1337" height="578" alt="image" src="https://github.com/user-attachments/assets/0ff32923-bd8d-4cad-978a-35de6b40be06" />
-
+4.3 Monthly Trends of “Useful,” “Funny,” and “Cool”
+Analyzing temporal trends in review attributes highlights how user engagement and review culture evolve over time. These metrics capture not just review volume but how the community interacts with and values content. 
+Insights:  
+* All three (“useful,” “funny,” “cool”) show a steady upward trend from 2005–2016, reflecting growing platform adoption and engagement.
+* The “useful” tag dominates, consistently outpacing the other two, suggesting users primarily value practical information.
+* Around 2016, there is a notable peak in engagement across all categories, followed by a decline—possibly linked to platform changes or saturation.  
+Implication:  
+For businesses, this shows that informative reviews drive the most attention, reinforcing the importance of encouraging detailed feedback. For platform design, the post-2016 decline suggests a need to rethink engagement features (e.g., new tagging systems or incentives) to sustain community participation.    
 <img width="3076" height="1763" alt="image" src="https://github.com/user-attachments/assets/0003be40-624e-46c4-89a4-10a2e9bb85f2" />
 
 
