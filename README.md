@@ -177,33 +177,60 @@ WHERE u.user_id IS NULL;
 ---------------------------------------------------------------------------------------------
 # 4 Exploratory Data Analysis
 
-4.1 
-We want to understand the relationship between the number of “useful” marks and the highest star ratings.
+4.1 Relationship Between “Useful” Marks and Ratings  
+To explore how community feedback relates to perceived quality, we analyze the relationship between the number of “useful” marks a review receives and its associated star ratings.
 
-The following regression plots show the trend of how the highest rating (stars) changes as the number of “useful” marks on reviews increases. The x-axis represents thresholds of “useful” marks, ranging from 100 to 1000 in increments of 20. The y-axis represents the highest rating corresponding to each threshold.
+The following regression plots show the trend of how the highest rating (stars) changes as the number of “useful” marks on reviews increases. The x-axis represents thresholds of “useful” marks, ranging from 100 to 1000 in increments of 20. The y-axis represents the highest rating corresponding to each threshold.  
+
 <img width="1610" height="451" alt="image" src="https://github.com/user-attachments/assets/847992ed-51da-4cc2-9abf-2cdf6c476f23" />
+
+Insights
+* Reviews marked as more “useful” tend to be longer, indicating that informative and detailed content drives community recognition.
+* Both highest rating and average rating generally decline as usefulness increases, suggesting that balanced or critical reviews are more often valued by readers.
+* The number of reviews associated with highly useful thresholds decreases, reflecting that only a small fraction of reviews achieve very high usefulness counts.  
+
+Implication  
+For Yelp and similar platforms, this suggests that depth and informativeness matter more than positivity when it comes to community validation. Business owners should encourage detailed, constructive feedback rather than only positive ratings, while platforms can surface these reviews to strengthen credibility.  
+
+4.2 Relationship Between “Funny” Marks and Ratings  
+We also examine how the number of “funny” marks correlates with review ratings and content features.  
+
+The regression plots illustrate how maximum rating, average rating, average review length, and number of reviews shift as the count of “funny” marks increases (thresholds from 100 to 1000, in increments of 20).  
+
 <img width="1597" height="451" alt="image" src="https://github.com/user-attachments/assets/98cb36b4-a8d0-4e6d-9ea9-8de2c167fea9" /> 
+
+Insights  
+* Reviews with higher “funny” counts are also longer on average, showing that witty or humorous reviews often involve more narrative detail.
+* The average rating declines as “funny” marks increase, implying that humor is more common in critical or sarcastic reviews.
+* The number of reviews associated with high “funny” thresholds remains low, highlighting that humorous content is valued but less frequently produced.  
+
+Implication  
+For platforms, this indicates that humor plays a role in community engagement, even if it does not align with higher ratings. Highlighting “funny” reviews can enrich user experience and differentiate the platform, but should complement rather than replace the promotion of informative content.  
 
 4.2 Start Rating Distribution  
 Examining the distribution of star ratings across businesses offers a baseline for understanding perceived quality on Yelp. When ratings are concentrated in the 3.5–4.5 range, it suggests that the platform’s scoring system is generally balanced and reliable. Significant deviations from this pattern, however, may indicate potential issues, like rating inflation or bias, that require further investigation.  
+ 
+<img width="1027" height="474" alt="image" src="https://github.com/user-attachments/assets/0f273ebd-08c0-4e8f-9aed-41d805cd512d" />
+
 Insights:
 * The distribution is right-skewed, with relatively few businesses rated at 1–2 stars and a large concentration at 3.5–4 stars.
 * Five-star ratings are common but not dominant, indicating that perfect scores are attainable yet not universal.  
 
 Implication:  
-Models and analyses that treat ratings as outcomes (e.g., predicting business success) need to account for this imbalance, as businesses rarely fall at the extremes. From a business perspective, even small improvements near the 3.5–4 star threshold can have a significant effect on customer perception and visibility.  
-<img width="1027" height="474" alt="image" src="https://github.com/user-attachments/assets/0f273ebd-08c0-4e8f-9aed-41d805cd512d" />
+Models and analyses that treat ratings as outcomes (e.g., predicting business success) need to account for this imbalance, as businesses rarely fall at the extremes. From a business perspective, even small improvements near the 3.5–4 star threshold can have a significant effect on customer perception and visibility. 
 
 4.3 Monthly Trends of “Useful,” “Funny,” and “Cool”  
 Analyzing temporal trends in review attributes highlights how user engagement and review culture evolve over time. These metrics capture not just review volume but how the community interacts with and values content. 
+ 
+<img width="3076" height="1763" alt="image" src="https://github.com/user-attachments/assets/0003be40-624e-46c4-89a4-10a2e9bb85f2" />
+
 Insights:  
 * All three (“useful,” “funny,” “cool”) show a steady upward trend from 2005–2016, reflecting growing platform adoption and engagement.
 * The “useful” tag dominates, consistently outpacing the other two, suggesting users primarily value practical information.
-* Around 2016, there is a notable peak in engagement across all categories, followed by a decline—possibly linked to platform changes or saturation.  
-Implication:  
-For businesses, this shows that informative reviews drive the most attention, reinforcing the importance of encouraging detailed feedback. For platform design, the post-2016 decline suggests a need to rethink engagement features (e.g., new tagging systems or incentives) to sustain community participation.    
-<img width="3076" height="1763" alt="image" src="https://github.com/user-attachments/assets/0003be40-624e-46c4-89a4-10a2e9bb85f2" />
+* Around 2016, there is a notable peak in engagement across all categories, followed by a decline—possibly linked to platform changes or saturation.
 
+Implication:  
+For businesses, this shows that informative reviews drive the most attention, reinforcing the importance of encouraging detailed feedback. For platform design, the post-2016 decline suggests a need to rethink engagement features (e.g., new tagging systems or incentives) to sustain community participation.   
 
 ---------------------------------------------------------------------------------------------
 # 5 Geospatial Analysis On Reviews
