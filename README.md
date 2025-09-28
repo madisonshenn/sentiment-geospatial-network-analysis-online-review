@@ -415,7 +415,7 @@ Implication:
 Regional analysis reveals micro-community structures that are not visible at the global scale. For Yelp, this indicates that a localized approach to social features could be more effective—for instance, boosting elite content within communities or applying community-aware ranking in recommendations and marketing campaigns.
 
 ---------------------------------------------------------------------------------------------
-# 8 Insights by Stakeholder Perspective
+# 8 Strategic Takeaways
 ### 1. User Perspective
 For users, a key motivation is often how to efficiently earn the Elite User badge, which brings access to special promotions and increased visibility on the platform. Analysis shows that the most important factor is the volume of reviews and photos posted, particularly reviews. Long-form reviews with higher information content are more impactful than short or stylistically polished ones. Reviews that highlight overlooked issues at otherwise highly-rated restaurants are especially likely to attract attention. Geographically, users located in states such as Nevada and Arizona have a higher likelihood of being awarded Elite status, due to the density of high-traffic businesses in these regions.  
 
@@ -432,6 +432,3 @@ Restaurants less concerned about location can still improve ratings by maximizin
 From the platform’s standpoint, existing user engagement is strong, but new user registrations have declined year over year. This suggests both market saturation and the need for new growth strategies. Potential measures include seasonal promotions (e.g., partnering with restaurants during summer, when dining out activity peaks) and offering targeted discounts to attract new users. Expanding into new states or international markets also presents a viable path for sustaining growth.  
 
 For existing users—especially active non-Elite users—the platform could introduce cyclical engagement campaigns that reward activity milestones (e.g., posting reviews, check-ins, or photos). “Come-back” benefits could re-engage inactive users, while further enhancing the perks of Elite membership would incentivize broader participation and raise overall community quality.
-
-# 9 Strategic Takeaways
-
